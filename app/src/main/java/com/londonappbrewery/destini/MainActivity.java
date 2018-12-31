@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 public class MainActivity extends AppCompatActivity {
 
     // TODO: Steps 4 & 8 - Declare member variables here:
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         mStoryTextView.setText(R.string.T1_Story);
         mButtonTop.setText(R.string.T1_Ans1);
         mButtonBottom.setText(R.string.T1_Ans2);
+        mButtonTop.setVisibility(VISIBLE);
+        mButtonBottom.setVisibility(VISIBLE);
 
         // TODO: Steps 6, 7, & 9 - Set a listener on the top button:
         mButtonTop.setOnClickListener(new View.OnClickListener() {
@@ -42,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (mCurrentState == R.string.T3_Story){
                     mStoryTextView.setText(R.string.T6_End);
-                    mButtonTop.setText("");
-                    mButtonBottom.setText("");
+                    mButtonTop.setVisibility(GONE);
+                    mButtonBottom.setVisibility(GONE);
                     mCurrentState = R.string.T6_End;
                 }
             }
@@ -61,14 +66,14 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (mCurrentState == R.string.T3_Story){
                     mStoryTextView.setText(R.string.T5_End);
-                    mButtonTop.setText("");
-                    mButtonBottom.setText("");
+                    mButtonTop.setVisibility(GONE);
+                    mButtonBottom.setVisibility(GONE);
                     mCurrentState = R.string.T5_End;
                 }
                 else if (mCurrentState == R.string.T2_Story){
                     mStoryTextView.setText(R.string.T4_End);
-                    mButtonTop.setText("");
-                    mButtonBottom.setText("");
+                    mButtonTop.setVisibility(GONE);
+                    mButtonBottom.setVisibility(GONE);
                     mCurrentState = R.string.T4_End;
                 }
             }
